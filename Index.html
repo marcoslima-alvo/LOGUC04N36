@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENAC SP - Minisite Didático: Gestão de Compras em Logística</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --senac-blue: #004587;
+            --senac-orange: #F29111;
+            --senac-light: #F8F9FA;
+            --senac-dark: #212529;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F1F3F5;
+            color: var(--senac-dark);
+        }
+
+        /* Header Customizado */
+        .senac-header {
+            background: linear-gradient(135deg, var(--senac-blue) 0%, #002851 100%);
+            color: white;
+            padding: 2.5rem 1rem;
+            border-bottom: 5px solid var(--senac-orange);
+            box-shadow: var(--shadow-md);
+        }
+
+        .senac-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Navegação Lateral / Menu */
+        .nav-pills .nav-link {
+            color: var(--senac-blue);
+            background-color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-pills .nav-link.active, .nav-pills .nav-link:hover {
+            background-color: var(--senac-blue) !important;
+            color: white !important;
+            border-left: 4px solid var(--senac-orange);
+        }
+
+        /* Cards do Conteúdo */
+        .content-card {
+            background-color: white;
+            border-radius: 8px;
+            border: none;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 1.5rem;
+            padding: 2rem;
+        }
+
+        .section-title {
+            color: var(--senac-blue);
+            border-bottom: 2px solid var(--senac-orange);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Boxes de Cálculo */
+        .math-box {
+            background-color: #FFF9F2;
+            border-left: 5px solid var(--senac-orange);
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .formula {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #E9ECEF;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: block;
+            font-weight: bold;
+            color: #C7254E;
+        }
+
+        /* Alertas e Badges */
+        .badge-senac {
+            background-color: var(--senac-orange);
+            color: white;
+            font-weight: 500;
+        }
+
+        .bloom-box {
+            background-color: #E6F0FA;
+            border-left: 5px solid var(--senac-blue);
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer {
+            background-color: var(--senac-blue);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-top: 4px solid var(--senac-orange);
+        }
+
+        .step-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .step-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .step-list li::before {
+            content: "➔";
+            position: absolute;
+            left: 0;
+            color: var(--senac-orange);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="senac-header text-center">
+        <div class="container">
+            <h1 class="senac-brand">🏢 SENAC SÃO PAULO</h1>
+            <p class="lead mb-0 font-weight-light">Habilitação Profissional Técnica em Logística</p>
+            <h2 class="mt-2 h4 text-warning">📦 Componente Curricular: Gestão Integrada de Compras e Suprimentos</h2>
+        </div>
+    </header>
+
+    <div class="container-fluid my-4 px-md-5">
+        <div class="row">
+            
+            <div class="col-lg-3 mb-4">
+                <div class="sticky-top" style="top: 20px;">
+                    <div class="p-3 bg-white rounded shadow-sm mb-3 text-center">
+                        <span class="fw-bold text-uppercase text-secondary" style="font-size: 0.85rem;">Guia de Aulas</span>
+                    </div>
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active text-start" id="aula1-tab" data-bs-toggle="pill" data-bs-target="#aula1" type="button" role="tab">🎯 Aula 1: Alavancagem e Integração</button>
+                        <button class="nav-link text-start" id="aula2-tab" data-bs-toggle="pill" data-bs-target="#aula2" type="button" role="tab">🔄 Aula 2: Ciclo de Compra e IDF</button>
+                        <button class="nav-link text-start" id="aula3-tab" data-bs-toggle="pill" data-bs-target="#aula3" type="button" role="tab">📄 Aula 3: Three-Way Matching</button>
+                        <button class="nav-link text-start" id="aula4-tab" data-bs-toggle="pill" data-bs-target="#aula4" type="button" role="tab">✈️ Aula 4: Modalidades e TCO</button>
+                        <button class="nav-link text-start" id="aula5-tab" data-bs-toggle="pill" data-bs-target="#aula5" type="button" role="tab">🚛 Aula 5: Motivação e Fretes (FOB/CIF)</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    
+                    <div class="tab-pane fade show active" id="aula1" role="tabpanel">
+                        <div class="content-card">
+                            <h2 class="section-title">🎯 Aula 1: Compras – Conceito, Importância e Integração Organizacional</h2>
+                            
+                            <h5>1. Diretrizes Técnicas e Fundamentos</h5>
+                            <p>O setor de compras evoluiu de uma função operacional-burocrática para um pilar estritamente estratégico no <em>Supply Chain Management</em>. Em empresas industriais e logísticas, as aquisições de materiais representam frequentemente de <strong>50% a 70%</strong> do Custo do Produto Vendido (CPV). Consequentemente, qualquer otimização em compras impacta de forma direta o lucro líquido operacional, fenômeno técnico denominado <strong>Efeito de Alavancagem de Compras (EAC)</strong>.</p>
+                            
+                            <h5 class="mt-4">2. Estudo de Caso Prático: Guarulhos Express Logística</h5>
+                            <div class="border-start border-4 border-primary p-3 bg-light my-3">
+                                <strong>👤 Personagem:</strong> Rodrigo, Analista de Compras Júnior.<br>
+                                <strong>🚨 Problemática:</strong> Isolamento departamental (efeito silo). Rodrigo reteve a compra de filme stretch para negociar um desconto de 3%, gerando a ruptura do estoque no almoxarifado. Quinze carretas carregadas ficaram retidas nas docas da empresa, localizadas às margens da Rodovia Presidente Dutra em Guarulhos, por falta de insumo para paletização. Paralelamente, o Diretor Financeiro barrou pedidos de paletes porque o prazo de pagamento obtido (7 dias) prejudicou o fluxo de caixa de curto prazo.
+                            </div>
+
+                            <h5 class="mt-4">3. Memória de Cálculo Passo a Passo: Alavancagem</h5>
+                            <p>Para provar o valor estratégico do setor à diretoria, Rodrigo demonstrou matematicamente o impacto de uma redução de custos em compras comparada ao esforço necessário em vendas para obter o mesmo resultado financeiro.</p>
+                            
+                            <div class="math-box">
+                                <ul>
+                                    <li><strong>Faturamento Anual Atual:</strong> R$ 10.000.000,00</li>
+                                    <li><strong>Volume de Compras de Insumos (60%):</strong> R$ 6.000.000,00</li>
+                                    <li><strong>Outros Custos Fixos/Despesas:</strong> R$ 3.000.000,00</li>
+                                    <li><strong>Lucro Líquido Atual:</strong> R$ 1.000.000,00 (Margem Líquida de 10%)</li>
+                                </ul>
+                                <p class="mt-3"><strong>Passo 1:</strong> Meta de redução de 5% obtida por renegociação de contratos em compras:</p>
+                                <span class="formula">Economia = R$ 6.000.000,00 × 0,05 = R$ 300.000,00</span>
+                                <p class="mt-2">O novo lucro líquido da organização saltará diretamente para <strong>R$ 1.300.000,00</strong>.</p>
+                                
+                                <p class="mt-3"><strong>Passo 2:</strong> Cálculo do faturamento adicional que o setor de Vendas precisaria gerar para atingir os mesmos R$ 300.000,00 de lucro, mantendo a margem atual de 10%:</p>
+                                <span class="formula">Aumento de Vendas = Economia em Compras / Margem Líquida</span>
+                                <span class="formula">Aumento de Vendas = R$ 300.000,00 / 0,10 = R$ 3.000.000,00</span>
+                            </div>
+                            <p class="text-muted font-italic">💡 <strong>Comentário Analítico:</strong> Uma economia de apenas 5% no setor de compras gera o mesmo resultado real no caixa que um aumento massivo de 30% no faturamento bruto de vendas.</p>
+
+                            <div class="bloom-box">
+                                <h5>🧠 Situação de Aprendizagem (Taxonomia de Bloom: Criar)</h5>
+                                <p><strong>O Desafio:</strong> Em equipes, os alunos atuarão como consultores integrados e deverão desenhar um <strong>"Acordo de Nível de Serviço Interno" (SLA)</strong> unificando Compras, Almoxarifado e Financeiro. Eles devem criar uma matriz de comunicação visual dinâmica (estilo Kanban ou painel de gestão à vista) que impeça a emissão de Pedidos de Compra sem a validação simultânea de espaço físico disponível (Almoxarifado) e saldo em fluxo de caixa (Financeiro), banindo totalmente o uso de e-mails lentos de cobrança.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="aula2" role="tabpanel">
+                        <div class="content-card">
+                            <h2 class="section-title">🔄 Aula 2: Processo de Compra e Softwares de CRM/SRM</h2>
+                            
+                            <h5>1. Diretrizes Técnicas e Fundamentos</h5>
+                            <p>O ciclo de compras corporativo deve seguir etapas rígidas para mitigar riscos de fraudes, falhas técnicas e desabastecimento. A sequência lógica envolve: Requisição de Materiais ➔ Solicitação de Compras (SC) ➔ Homologação de Fornecedores ➔ Cotação de Preços (RFQ) ➔ Autorização de Fornecimento ➔ Avaliação Pós-Entrega.</p>
+                            <p>A aplicação de conceitos de <strong>CRM (Customer Relationship Management)</strong> voltada para a base de suprimentos é denominada <strong>SRM (Supplier Relationship Management)</strong>, sendo essencial para manter cadastros higienizados e automatizar o <em>follow-up</em> das ordens emitidas.</p>
+                            
+                            <h5 class="mt-4">2. Estudo de Caso Prático: Metalúrgica Cumbica S/A</h5>
+                            <div class="border-start border-4 border-primary p-3 bg-light my-3">
+                                <strong>👤 Personagem:</strong> Mariana, Compradora Pleno.<br>
+                                <strong>🚨 Problemática:</strong> Mariana recebeu uma requisição manual urgente de 10.000 parafusos de liga de titânio. Sem parâmetros técnicos no sistema e utilizando planilhas desatualizadas, comprou de um fornecedor antigo que não possuía homologação ativa. As peças foram entregues com o padrão de rosca incorreto, paralisando a montagem de eixos de transmissão automotivos no distrito industrial de Cumbica, Guarulhos.
+                            </div>
+
+                            <h5 class="mt-4">3. Memória de Cálculo Passo a Passo: Índice de Desempenho do Fornecedor (IDF)</h5>
+                            <p>Mariana desenvolveu uma métrica de média ponderada para qualificar os parceiros e justificar a exclusão do fornecedor ineficiente.</p>
+                            
+                            <div class="math-box">
+                                <h6>Pesos Definidos pela Política de Qualidade:</h6>
+                                <ul>
+                                    <li>Pontualidade (Peso 4) | Qualidade do Item (Peso 4) | Condição Comercial (Peso 2)</li>
+                                </ul>
+                                <h6>Notas Obtidas pelo Fornecedor do Caso (Escala 0 a 100):</h6>
+                                <ul>
+                                    <li>Pontualidade: 90 (Entrega dentro do prazo acordado)</li>
+                                    <li>Qualidade: 30 (70% do lote apresentou defeito dimensional na rosca)</li>
+                                    <li>Condição Comercial: 100 (Cumpriu o preço e aceitou prazo de 45 dias)</li>
+                                </ul>
+                                <p class="mt-3"><strong>Cálculo do IDF Ponderado:</strong></p>
+                                <span class="formula">IDF = [(90 × 4) + (30 × 4) + (100 × 2)] / (4 + 4 + 2)</span>
+                                <span class="formula">IDF = [360 + 120 + 200] / 10 = 680 / 10 = 68</span>
+                            </div>
+                            <p class="text-muted font-italic">💡 <strong>Comentário Analítico:</strong> Com um IDF de 68, o fornecedor fica classificado abaixo da nota mínima de corte (70) estabelecida para a linha de produção de autopeças, gerando sua suspensão imediata no sistema SRM.</p>
+
+                            <div class="bloom-box">
+                                <h5>🧠 Situação de Aprendizagem (Taxonomia de Bloom: Criar)</h5>
+                                <p><strong>O Desafio:</strong> Os alunos simularão um ambiente de mercado B2B automatizado. Deverão construir um protótipo funcional de cadastro e homologação de fornecedores utilizando ferramentas de formulários em nuvem integrados a QR Codes. Os "fornecedores" deverão realizar o auto-cadastro via celular em sala, inserindo certidões fiscais vigentes em Guarulhos. O sistema criado pelos alunos deve gerar validações automatizadas de aprovação ou recusa com base nos parâmetros inseridos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="aula3" role="tabpanel">
+                        <div class="content-card">
+                            <h2 class="section-title">📄 Aula 3: Documentos Relativos às Compras e Conciliação</h2>
+                            
+                            <h5>1. Diretrizes Técnicas e Fundamentos</h5>
+                            <p>Toda operação logística é regida por documentos fiscais e operacionais de natureza auditável. O controle documental rigoroso previne fraudes e inconsistências financeiras. A técnica padrão de mercado para validação é o <strong>Three-Way Matching</strong>, que consiste no cruzamento eletrônico e físico de três vias essenciais: <strong>Pedido de Compra (PO) × Nota Fiscal Eletrônica (NF-e) × Romaneio de Carga / Conferência Física</strong>.</p>
+                            
+                            <h5 class="mt-4">2. Estudo de Caso Prático: CD Logístico Taboão</h5>
+                            <div class="border-start border-4 border-primary p-3 bg-light my-3">
+                                <strong>👤 Personagem:</strong> Carlos, Assistente de Recebimento.<br>
+                                <strong>🚨 Problemática:</strong> Pressionado pelo acúmulo de veículos na portaria do galpão logístico no bairro do Taboão (Guarulhos), Carlos assinou o canhoto de recebimento de uma carga de bobinas de plástico bolha sem realizar a conferência cega e o batimento de valores. Dias depois, o setor fiscal detectou divergências severas de preço faturado e quebras físicas não notificadas.
+                            </div>
+
+                            <h5 class="mt-4">3. Memória de Cálculo Passo a Passo: Apuração de Quebra Documental</h5>
+                            <div class="math-box">
+                                <h6>Dados do Pedido de Compra (Contratado):</h6>
+                                <p>500 bobinas ao preço unitário acordado de R$ 10,00. <strong>Valor Total Esperado: R$ 5.000,00</strong></p>
+                                
+                                <h6>Dados da Nota Fiscal Emitida (Faturado Incorretamente):</h6>
+                                <p>500 bobinas faturadas ao preço de R$ 12,50. <strong>Valor Total Emitido na NF: R$ 6.250,00</strong></p>
+                                
+                                <h6>Dados da Conferência Física no Armazém:</h6>
+                                <p>460 bobinas em perfeito estado e 40 bobinas com avaria grave por umidade.</p>
+                                
+                                <hr>
+                                <p><strong>Passo 1: Cálculo do Prejuízo por Divergência Fiscal (Preço unitário errado):</strong></p>
+                                <span class="formula">Divergência Fiscal = Valor Faturado - Valor Contratado</span>
+                                <span class="formula">Divergência Fiscal = R$ 6.250,00 - R$ 5.000,00 = R$ 1.250,00 (Cobrança a Maior)</span>
+                                
+                                <p class="mt-3"><strong>Passo 2: Cálculo do Prejuízo Físico (Itens avariados aceitos sem ressalva legal):</strong></p>
+                                <span class="formula">Prejuízo por Avaria = 40 unidades × R$ 12,50 = R$ 500,00</span>
+                                
+                                <p class="mt-3"><strong>Passo 3: Impacto Financeiro Total Absorvido pela Empresa:</strong></p>
+                                <span class="formula">Prejuízo Total = R$ 1.250,00 + R$ 500,00 = R$ 1.750,00</span>
+                            </div>
+                            <p class="text-muted font-italic">💡 <strong>Comentário Analítico:</strong> Como o canhoto da nota fiscal foi assinado sem nenhuma ressalva pelo setor de recebimento, a empresa perdeu o direito de recusa legal e acionamento de sinistro junto ao fornecedor, assumindo integralmente a perda financeira.</p>
+
+                            <div class="bloom-box">
+                                <h5>🧠 Situação de Aprendizagem (Taxonomia de Bloom: Compreender/Aplicar)</h5>
+                                <p><strong>O Desafio:</strong> Jogo de Auditoria de Doca Reversa. O professor distribuirá conjuntos propositalmente embaralhados de pedidos de compras, notas fiscais com erros de CNPJ e romaneios divergentes. Os alunos deverão estruturar um mecanismo físico de verificação rápida baseado em conceitos <strong>Poka-Yoke (à prova de erros)</strong> utilizando cores e gabaritos vazados que permita a identificação de fraudes em documentos comerciais em menos de 15 segundos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="aula4" role="tabpanel">
+                        <div class="content-card">
+                            <h2 class="section-title">✈️ Aula 4: Modalidades de Compras – Normal, Emergencial e TCO</h2>
+                            
+                            <h5>1. Diretrizes Técnicas e Fundamentos</h5>
+                            <p>As modalidades de compras ditam a velocidade e os custos associados ao processo. Na <strong>Compra Normal</strong>, busca-se a otimização de preços e prazos amplos de pagamento. Na <strong>Compra Emergencial</strong>, o objetivo principal é a redução drástica do tempo de atendimento (<em>Lead Time</em>), sacrificando-se as margens de lucro.</p>
+                            <p>A análise profissional de compras deve ser pautada no conceito de <strong>TCO (Total Cost of Ownership - Custo Total de Propriedade)</strong>, avaliando não apenas o preço de nota do produto, mas todas as despesas adicionais, seguros, custos de frete expresso e penalidades envolvidas.</p>
+                            
+                            <h5 class="mt-4">2. Estudo de Caso Prático: LogiTech Componentes Aeronáuticos</h5>
+                            <div class="border-start border-4 border-primary p-3 bg-light my-3">
+                                <strong>👤 Personagem:</strong> Amanda, Compradora de Importação.<br>
+                                <strong>🚨 Problemática:</strong> Uma empresa aérea cliente emitiu um chamado emergencial de <em>Aircraft on Ground</em> (aeronave retida em solo por quebra mecânica em Guarulhos). O atraso gera uma multa contratual contra a LogiTech de R$ 50.000,00 por dia. Amanda precisa decidir entre uma importação aérea urgente via courier dos EUA ou uma compra planejada nacional de um distribuidor local com prazo de separação de 5 dias.
+                            </div>
+
+                            <h5 class="mt-4">3. Memória de Cálculo Passo a Passo: Análise de TCO</h5>
+                            <div class="math-box">
+                                <h6>Cenário A: Importação Emergencial Aérea (Miami ➔ GRU) - Tempo de Entrega: 1 dia</h6>
+                                <ul>
+                                    <li>Preço do Componente: US$ 2.000,00 | Frete Expresso: US$ 1.500,00 | Desembaraço Aduaneiro: US$ 500,00</li>
+                                    <li>Taxa de Câmbio Convertida: R$ 5,00 por US$ 1,00</li>
+                                    <li>Multa Contratual por Aeronave em Solo: 1 dia (R$ 50.000,00)</li>
+                                </ul>
+                                <span class="formula">Custo Logístico em Reais = US$ 4.000,00 × 5,00 = R$ 20.000,00</span>
+                                <span class="formula">TCO Cenário A = R$ 20.000,00 (Custos) + R$ 50.000,00 (Multa) = R$ 70.000,00</span>
+                                
+                                <h6 class="mt-4">Cenário B: Compra Local Normal (Distribuidor SP) - Tempo de Entrega: 5 dias</h6>
+                                <ul>
+                                    <li>Preço do Componente Nacionalizado: R$ 15.000,00 | Frete Local: R$ 200,00</li>
+                                    <li>Multa Contratual por Aeronave em Solo: 5 dias (5 × R$ 50.000,00 = R$ 250.000,00)</li>
+                                </ul>
+                                <span class="formula">TCO Cenário B = R$ 15.200,00 (Custos) + R$ 250.000,00 (Multa) = R$ 265.200,00</span>
+                            </div>
+                            <p class="text-muted font-italic">💡 <strong>Comentário Analítico:</strong> A modalidade de Compra Emergencial com frete internacional de alto custo mostrou-se a decisão mais acertada, gerando uma economia de <strong>R$ 195.200,00</strong> no Custo Total de Propriedade (TCO) final da organização.</p>
+
+                            <div class="bloom-box">
+                                <h5>🧠 Situação de Aprendizagem (Taxonomia de Bloom: Criar)</h5>
+                                <p><strong>O Desafio:</strong> Os estudantes atuarão como membros de um Comitê de Gestão de Riscos Globais e Crises de Suprimentos. Deverão elaborar um plano de contingência para o polo de Guarulhos simulando um bloqueio portuário na Ásia concomitante a uma greve de transportes internos. Eles devem estruturar um fluxo logístico alternativo utilizando frotas colaborativas compartilhadas entre indústrias concorrentes para rateio de fretes e otimização emergencial de insumos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="aula5" role="tabpanel">
+                        <div class="content-card">
+                            <h2 class="section-title">🚛 Aula 5: Classificação de Compras – Motivação e Fretes (FOB e CIF)</h2>
+                            
+                            <h5>1. Diretrizes Técnicas e Fundamentos</h5>
+                            <p>As compras são estruturadas de acordo com as motivações de mercado: <strong>Contratada</strong> (fornecimento de longo prazo), <strong>Antecipada</strong> (sazonalidades de demanda) ou <strong>Especulativa</strong> (antecipação de aumentos de preço). </p>
+                            <p>No tocante à responsabilidade do frete, os Incoterms básicos dividem os riscos e custos legais:</p>
+                            <ul>
+                                <li><strong>FOB (Free on Board - Origem):</strong> O comprador assume todos os riscos, custos de transporte, taxas de pedágio e contratação de seguro a partir do momento em que a mercadoria é coletada na usina de origem.</li>
+                                <li><strong>CIF (Cost, Insurance and Freight - Destino):</strong> O fornecedor arca com todos os custos e riscos do transporte até que a mercadoria seja efetivamente entregue e descarregada nas dependências do comprador.</li>
+                            </ul>
+                            
+                            <h5 class="mt-4">2. Estudo de Caso Prático: Distribuidora de Alimentos Pimentas</h5>
+                            <div class="border-start border-4 border-primary p-3 bg-light my-3">
+                                <strong>👤 Personagem:</strong> Lucas, Analista de Compras e Tráfego de Transportes.<br>
+                                <strong>🚨 Problemática:</strong> Lucas necessita adquirir um lote massivo de 20 toneladas (20.000 kg) de óleo de soja no bairro dos Pimentas em Guarulhos. Ele enfrenta uma análise complexa comparando duas propostas comerciais com regimes de frete opostos, sob a projeção de um aumento inflacionário de 15% na commodity para o mês subsequente.
+                            </div>
+
+                            <h5 class="mt-4">3. Memória de Cálculo Passo a Passo: Comparação de Estruturas de Frete</h5>
+                            <div class="math-box">
+                                <h6>Proposta Fornecedor Alfa (Mato Grosso) - Modalidade FOB (Origem):</h6>
+                                <ul>
+                                    <li>Preço Base do Insumo: R$ 5,00/kg</li>
+                                    <li>Frete Rodoviário de Retirada contratado por Lucas: R$ 1,20/kg | Seguro da Carga: R$ 0,10/kg</li>
+                                </ul>
+                                <span class="formula">Custo Total Colocado Alfa (FOB) = R$ 5,00 + R$ 1,20 + R$ 0,10 = R$ 6,30 por kg</span>
+                                
+                                <h6 class="mt-4">Proposta Fornecedor Beta (Interior SP) - Modalidade CIF (Destino):</h6>
+                                <ul>
+                                    <li>Preço Final com Frete e Seguro Embutidos na Nota: R$ 6,40/kg</li>
+                                </ul>
+                                <span class="formula">Custo Total Colocado Beta (CIF) = R$ 6,40 por kg</span>
+                                
+                                <hr>
+                                <h6>Análise de Viabilidade Econômica da Compra Especulativa (Lote Duplicado para 40.000 kg):</h6>
+                                <p>Preço futuro estimado caso a compra seja postergada (Aumento de 15% sobre o preço base FOB):</p>
+                                <span class="formula">Preço Base Futuro = R$ 5,00 × 1,15 = R$ 5,75/kg</span>
+                                <span class="formula">Novo Custo Colocado FOB Futuro = R$ 5,75 + R$ 1,20 + R$ 0,10 = R$ 7,05/kg</span>
+                                <span class="formula">Economia Gerada por kg via Especulação = R$ 7,05 (Futuro) - R$ 6,30 (Atual) = R$ 0,75/kg</span>
+                                <span class="formula">Economia Especulativa Total no Lote Adicional = 20.000 kg × R$ 0,75 = R$ 15.000,00</span>
+                            </div>
+                            <p class="text-muted font-italic">💡 <strong>Comentário Analítico:</strong> Ao optar pelo Fornecedor Alfa (FOB), o custo colocado atual foi R$ 0,10 mais barato por quilo do que o modelo CIF. Adicionalmente, a ativação da compra especulativa para o lote extra protegeu o caixa da distribuidora de uma perda inflacionária iminente, gerando um ganho de R$ 15.000,00.</p>
+
+                            <div class="bloom-box">
+                                <h5>🧠 Situação de Aprendizagem (Taxonomia de Bloom: Criar)</h5>
+                                <p><strong>O Desafio:</strong> Mesa Redonda de Compras e Simulador de Pregão Dinâmico. Os alunos deverão projetar um "Algoritmo de Chaveamento de Frete Transmissível". O professor alterará em tempo real parâmetros imprevistos durante a aula (aumento no valor do diesel, interdições na Dutra ou reajustes em praças de pedágio). Os alunos deverão recalcular e alterar instantaneamente as cláusulas contratuais de CIF para FOB utilizando contratos simulados, direcionando transportadores autônomos por aplicativos de geolocalização para mitigar impactos de custos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="mb-1">© SENAC São Paulo - Centro de Educação Profissional</p>
+            <p class="small text-white-50 mb-0">Material Didático de Apoio ao Estudante - Curso Técnico em Logística. Proibida a reprodução parcial ou total para fins comerciais.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
